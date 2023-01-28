@@ -1,0 +1,98 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+//#include<stdio.h>
+//int main()
+//{
+//	//打开文件
+//	FILE* pf = fopen("test.dat", "w");
+//	if (pf == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	//写文件
+//	fputc('b', pf);
+//	fputc('i', pf);
+//	fputc('t', pf);
+//
+//	 
+//	//关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//
+//
+//
+//}
+
+
+////标准输出流
+//#include<stdio.h>
+//int main()
+//{
+//	fputc('b', stdout);
+//	fputc('i', stdout);
+//	fputc('t', stdout);
+//	return 0;
+//}
+
+
+////标准输入流
+//#include<stdio.h>
+//int main()
+//{
+//	fgetc(stdin);
+//	fgetc(stdin);
+//	fgetc(stdin);
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//int main()
+//{
+//	//打开文件
+//	FILE* pf = fopen("test.dat", "w");
+//	if (pf == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//
+//	//写入文件
+//
+//	fputs("abcdef\n", pf);
+//	fputs("qwertyu\n", pf);
+//
+//	//关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//
+//}
+
+
+#include<stdio.h>
+int main()
+{
+	char arr[10];
+	FILE* pf = fopen("test.dat", "r");
+	if (pf == NULL)
+	{
+		perror("fopen");
+		return 1;
+	}
+
+	fgets(arr, 4, pf);
+	printf("%s", arr);
+	fgets(arr, 4, pf);
+	printf("%s", arr);
+	fgets(arr, 4, pf);
+	printf("%s", arr);
+
+	fclose(pf);
+	pf = NULL;
+	return 0;
+
+}
+
+
