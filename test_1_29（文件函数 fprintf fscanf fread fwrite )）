@@ -1,0 +1,102 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+
+//格式化输入函数
+
+struct S
+{
+	char arr[10];
+	int num ;
+	float sc;
+};
+//int main()
+//{
+//	struct S s = { "abcdef",20,5.5f };
+//	//对格式化数据输入
+//	
+//	//打开文件
+//	FILE* pf = fopen("test.dat", "w");
+//	if (NULL == pf)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	//输入
+//	fprintf(pf, "%s %d %f", s.arr, s.num, s.sc);
+//
+//	//关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//
+//
+//}
+
+
+//格式化输出函数
+
+//int main()
+//{
+//	struct S s = { 0 };
+//	//打开文件
+//	FILE* pf = fopen("test.dat", "r");
+//	if (NULL == pf)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	//格式化输出
+//	fscanf(pf, "%s %d %f", s.arr, &(s.num), &(s.sc));
+//	/*printf("%s %d %f", s.arr, s.num, s.sc);*/
+//	fprintf(stdout, "%s %d %f", s.arr, &(s.num), &(s.sc));
+//	//关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+
+
+//二进制输出
+
+//int main()
+//{
+//	struct S s = { "abcdef",20,5.5f };
+//	//打开文件
+//	FILE* pf = fopen("test.dat","w");
+//	if (NULL == pf)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//
+//	//二进制输出
+//	fwrite(&s, sizeof(s), 1, pf);
+//
+//	
+//    //关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+//
+
+//二进制输入
+
+int main()
+{
+	struct S s = {0};
+	FILE* pf = fopen("test.dat", "r");
+	if (NULL == pf)
+	{
+		perror("fopen");
+		return 1;
+	}
+	fread(&s, sizeof(struct S), 1, pf);
+	printf("%s %d %f", s.arr, s.num, s.sc);
+	fclose(pf);
+	pf = NULL;
+	return 0;
+
+
+}
